@@ -24,29 +24,22 @@ class Paneless < Formula
     end
   end
 
-  def post_install
-    user_apps = Pathname.new("#{Dir.home}/Applications")
-    user_apps.mkpath
-    system "ln", "-sf", opt_prefix/"Paneless.app", user_apps/"Paneless.app"
-  end
-
   def caveats
     <<~EOS
-      Paneless requires two permissions in System Settings > Privacy & Security:
+      To add Paneless to your Applications folder:
+        ln -sf #{opt_prefix}/Paneless.app ~/Applications/Paneless.app
 
+      Then grant two permissions in System Settings > Privacy & Security:
         - Accessibility (to move and resize windows)
         - Input Monitoring (for global hotkeys)
 
-      Paneless.app has been symlinked to ~/Applications.
-
-      To start Paneless:
+      To start:
         open ~/Applications/Paneless.app
 
       To start at login:
         System Settings > General > Login Items > add Paneless
 
-      Config file: ~/.config/paneless/config
-      A default config is created on first launch.
+      Config file: ~/.config/paneless/config (created on first launch)
     EOS
   end
 
