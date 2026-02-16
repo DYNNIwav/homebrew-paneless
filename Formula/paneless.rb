@@ -24,6 +24,12 @@ class Paneless < Formula
     end
   end
 
+  def post_install
+    app_target = Pathname.new("#{Dir.home}/Applications/Paneless.app")
+    app_target.unlink if app_target.symlink? || app_target.exist?
+    app_target.make_symlink(opt_prefix/"Paneless.app")
+  end
+
   def caveats
     <<~EOS
       Paneless requires two permissions in System Settings > Privacy & Security:
@@ -31,11 +37,10 @@ class Paneless < Formula
         - Accessibility (to move and resize windows)
         - Input Monitoring (for global hotkeys)
 
-      To start Paneless:
-        open #{opt_prefix}/Paneless.app
+      Paneless.app has been symlinked to ~/Applications.
 
-      Or symlink to ~/Applications:
-        ln -sf #{opt_prefix}/Paneless.app ~/Applications/Paneless.app
+      To start Paneless:
+        open ~/Applications/Paneless.app
 
       To start at login:
         System Settings > General > Login Items > add Paneless
