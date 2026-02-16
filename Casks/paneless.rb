@@ -13,7 +13,10 @@ cask "paneless" do
   binary "#{appdir}/Paneless.app/Contents/MacOS/Paneless", target: "paneless"
 
   caveats <<~EOS
-    Paneless requires two permissions in System Settings > Privacy & Security:
+    Paneless is not code-signed. To allow it to run:
+      sudo xattr -cr /Applications/Paneless.app
+
+    Then grant two permissions in System Settings > Privacy & Security:
       - Accessibility (to move and resize windows)
       - Input Monitoring (for global hotkeys)
 
