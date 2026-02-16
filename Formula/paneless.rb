@@ -25,9 +25,9 @@ class Paneless < Formula
   end
 
   def post_install
-    app_target = Pathname.new("#{Dir.home}/Applications/Paneless.app")
-    app_target.unlink if app_target.symlink? || app_target.exist?
-    app_target.make_symlink(opt_prefix/"Paneless.app")
+    user_apps = Pathname.new("#{Dir.home}/Applications")
+    user_apps.mkpath
+    system "ln", "-sf", opt_prefix/"Paneless.app", user_apps/"Paneless.app"
   end
 
   def caveats
