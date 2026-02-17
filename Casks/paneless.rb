@@ -1,6 +1,6 @@
 cask "paneless" do
   version "1.0.0"
-  sha256 "8aecb2d70acaee02143a6544947c1b611528aef40e59a6e48ea2e991c1dc8cd2"
+  sha256 "6758693af408612fc9be29094ce23356a24d3ce483039a19490457a9fada45e2"
 
   url "https://github.com/DYNNIwav/paneless/releases/download/v#{version}/Paneless.app.zip"
   name "Paneless"
