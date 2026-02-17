@@ -1,6 +1,6 @@
 cask "paneless" do
   version "1.0.0"
-  sha256 "ed0e5c2952c5ed3e31a299179e95c9719a72693bb70ff6d9c1486fb22aaf53fd"
+  sha256 "8aecb2d70acaee02143a6544947c1b611528aef40e59a6e48ea2e991c1dc8cd2"
 
   url "https://github.com/DYNNIwav/paneless/releases/download/v#{version}/Paneless.app.zip"
   name "Paneless"
@@ -13,10 +13,7 @@ cask "paneless" do
   binary "#{appdir}/Paneless.app/Contents/MacOS/Paneless", target: "paneless"
 
   caveats <<~EOS
-    Paneless is not code-signed. To allow it to run:
-      sudo xattr -cr /Applications/Paneless.app
-
-    Then grant two permissions in System Settings > Privacy & Security:
+    Grant two permissions in System Settings > Privacy & Security:
       - Accessibility (to move and resize windows)
       - Input Monitoring (for global hotkeys)
 
