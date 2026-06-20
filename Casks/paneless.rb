@@ -7,7 +7,7 @@ cask "paneless" do
   desc "Tiling window manager for macOS with virtual workspaces and smooth animations"
   homepage "https://github.com/DYNNIwav/paneless"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Paneless.app"
   binary "#{appdir}/Paneless.app/Contents/MacOS/Paneless", target: "paneless"
