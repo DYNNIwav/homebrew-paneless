@@ -1,12 +1,14 @@
 cask "paneless" do
-  version "0.6.0"
-  sha256 "ae49d1d8a507edbe9576ae7a6c5b1e6c82862c9ae7b342d2fa15b7ebb3f5914c"
+  version "0.7.0"
+  sha256 "61ac459205141c619ad4433b19ce7047de176c2d6da54bc419bc7589a1cd52df"
 
-  url "https://github.com/DYNNIwav/paneless/releases/download/v#{version}/Paneless.app.zip"
+  url "https://github.com/DYNNIwav/paneless/releases/download/v#{version}/Paneless-20260930.142632.zip"
   name "Paneless"
-  desc "Tiling window manager for macOS with virtual workspaces and smooth animations"
+  desc "Tiling window manager with virtual workspaces and smooth animations"
   homepage "https://github.com/DYNNIwav/paneless"
 
+  auto_updates true
+  depends_on arch: :arm64
   depends_on macos: :sonoma
 
   app "Paneless.app"
